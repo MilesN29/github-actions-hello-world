@@ -1,0 +1,11 @@
+name: Conditional
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cron Log
+        run: echo "Cron log"
