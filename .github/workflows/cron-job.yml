@@ -1,0 +1,13 @@
+name: Cron Job Test
+
+on:
+  # schedule:
+  #   - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cron Log
+        run: echo "Cron log"
