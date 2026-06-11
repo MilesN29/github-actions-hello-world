@@ -7,5 +7,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Cron Log
-        run: echo "Cron log"
+      - name: Main Branch Only
+        if: github.ref == 'refs/head/main'
+        run: echo "Running on main"
