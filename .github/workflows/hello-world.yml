@@ -17,7 +17,7 @@ jobs:
         run: echo "Hello, GitHub Actions!"
       
       - name: Print Date
-        run: Date
+        run: date
 
       - name: Print Working Directory
         run: pwd
