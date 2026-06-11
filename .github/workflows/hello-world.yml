@@ -7,12 +7,16 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch: # allows manual triggering from GitHub UI
 
 jobs:
   greet:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
       
@@ -22,5 +26,20 @@ jobs:
       - name: Print Working Directory
         run: pwd
 
+      - name: Show System Information
+        run: |
+          echo "OS: $(uname -s)"
+          echo "Architecture: $(uname -m)"
+          echo Kernel: $(uname -r)
+
+      - name: Print Environemnt Variables
+        run: |
+          echo "GitHub Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+
       - name: List Files
         run: ls -la
+
+      - name: Say Goodbye
+        run: echo "Workflow completed successfully!"
